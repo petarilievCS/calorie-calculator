@@ -56,7 +56,7 @@ public class CalorieCalculator {
         User currentUser = new User();
         takeInfo(currentUser);
         currentUser.calculateBMR();
-        System.out.println(currentUser.BMR);
+        currentUser.calculateIntake();
 
     }
 }
