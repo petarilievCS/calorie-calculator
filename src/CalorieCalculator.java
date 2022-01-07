@@ -34,6 +34,21 @@ public class CalorieCalculator {
         }
         user.height = scan.nextInt();
 
+        System.out.print("Enter your weight (in kg): ");
+        while(!scan.hasNextDouble()) {
+            System.out.print("Please enter a number: ");
+            scan.next();
+        }
+        user.weight = scan.nextDouble();
+
+        System.out.print("Choose your goal: \n * Cut\n * Maintain\n * Bulk\n");
+        user.goal = scan.next();
+        while (!user.goal.equals("Cut") && !user.goal.equals("Maintain")
+                && !user.goal.equals("Bulk")) {
+            System.out.print("Please enter a valid choice: ");
+            user.goal = scan.next();
+        }
+
     }
 
     public static void main(String[] args) {
