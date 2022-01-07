@@ -35,6 +35,9 @@ public class User {
         } else {
             calorieIntake = (int) (1.1 * BMR);
         }
+
+        // Rounds calorie intake to 10
+        calorieIntake = Math.floorDiv(calorieIntake, 10) * 10;
     }
 
 }
