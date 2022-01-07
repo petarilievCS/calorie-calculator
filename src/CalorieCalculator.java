@@ -58,5 +58,8 @@ public class CalorieCalculator {
         currentUser.calculateBMR();
         currentUser.calculateIntake();
 
+        System.out.println("Calories: " + currentUser.calorieIntake + " kcal");
+        System.out.println("Protein: " + currentUser.proteinIntake + " grams of protein");
+
     }
 }
