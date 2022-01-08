@@ -49,6 +49,20 @@ public class CalorieCalculator {
             user.goal = scan.next();
         }
 
+        System.out.print("Choose your activity level: \n * Sedentary (no activity)" +
+                "\n * Low (1-3 days per week)" +
+                "\n * Moderate (3-5 days per week)" +
+                "\n * High (6-7 days per week)" +
+                "\n * Very High (athlete or physical job)\n");
+        user.activityLevel = scan.next();
+        while (!user.activityLevel.equals("Low") && !user.activityLevel.equals("Moderate")
+                && !user.activityLevel.equals("High") &&
+                !user.activityLevel.equals("Sedentary") &&
+                !user.activityLevel.equals("Very High")) {
+            System.out.print("Please enter a valid choice: ");
+            user.activityLevel = scan.next();
+        }
+
     }
 
     public static void main(String[] args) {
@@ -56,6 +70,7 @@ public class CalorieCalculator {
         User currentUser = new User();
         takeInfo(currentUser);
         currentUser.calculateBMR();
+        currentUser.calculateActivity();
         currentUser.calculateIntake();
 
         System.out.println("Calories: " + currentUser.calorieIntake + " kcal");
