@@ -10,7 +10,6 @@ public class CalorieCalculator {
     public static void takeInfo(User user) {
 
         // TODO: Add imperial units feature
-        // TODO: Ignore whitespace when taking input
 
         Scanner scan = new Scanner(System.in);
 
