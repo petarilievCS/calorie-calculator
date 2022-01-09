@@ -10,10 +10,19 @@ public class CalorieCalculator {
     public static void takeInfo(User user) {
 
         // TODO: Add imperial units feature
+        // TODO: Fix capitalization
 
         Scanner scan = new Scanner(System.in);
 
-        System.out.print("Enter your gender (M/F): ");
+        System.out.print("Enter your measurement system (Metric/Imperial): ");
+        user.unit = scan.nextLine().trim();
+
+        while (!user.unit.equals("Metric") && !user.unit.equals("Imperial")) {
+            System.out.print("Please enter a valid choice: ");
+            user.unit = scan.nextLine().trim();
+        }
+
+        System.out.print("\nEnter your gender (M/F): ");
         user.gender = scan.nextLine().trim();
 
         while (!user.gender.equals("M") && !user.gender.equals("F")) {

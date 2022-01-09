@@ -11,6 +11,7 @@ public class User {
     protected int proteinIntake;
     protected int calorieIntake;
     protected String activityLevel;
+    protected String unit;
 
     /**
      * Uses Muffin-St Jeor formula to calculate user basal metabolic rate (BMR)
