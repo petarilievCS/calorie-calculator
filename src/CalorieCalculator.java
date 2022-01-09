@@ -38,21 +38,50 @@ public class CalorieCalculator {
         }
         user.age = scan.nextInt();
 
-        System.out.print("\nEnter your height (in cm): ");
-        scan.nextLine();
-        while(!scan.hasNextInt()) {
-            System.out.print("Please enter a number: ");
-            scan.nextLine();
-        }
-        user.height = scan.nextInt();
+        if (user.unit.equals("Metric")) {
 
-        System.out.print("\nEnter your weight (in kg): ");
-        scan.nextLine();
-        while(!scan.hasNextDouble()) {
-            System.out.print("Please enter a number: ");
+            System.out.print("\nEnter your height (in cm): ");
             scan.nextLine();
+            while (!scan.hasNextInt()) {
+                System.out.print("Please enter a number: ");
+                scan.nextLine();
+            }
+            user.height = scan.nextInt();
+
+            System.out.print("\nEnter your weight (in kg): ");
+            scan.nextLine();
+            while (!scan.hasNextDouble()) {
+                System.out.print("Please enter a number: ");
+                scan.nextLine();
+            }
+            user.weight = scan.nextDouble();
+
+        } else {
+
+            System.out.println("\nEnter your height ");
+            System.out.print("Feet: ");
+            while (!scan.hasNextInt()) {
+                System.out.print("Please enter a number: ");
+                scan.nextLine();
+            }
+            user.height = (int) (scan.nextInt() * 30.48);
+
+            System.out.print("Inches: ");
+            while(!scan.hasNextInt()) {
+                System.out.print("Please enter a number: ");
+                scan.nextLine();
+            }
+            user.height += (int) (scan.nextInt() * 2.54);
+
+            System.out.print("\nPlease enter your weight (in lbs): ");
+            scan.nextLine();
+            while (!scan.hasNextDouble()) {
+                System.out.print("Please enter a number: ");
+                scan.nextLine();
+            }
+            user.weight = scan.nextDouble() / User.KG_TO_LBS;
+
         }
-        user.weight = scan.nextDouble();
 
         System.out.print("\nChoose your goal: \n * Cut\n * Maintain\n * Bulk\n");
         // reset System.in
