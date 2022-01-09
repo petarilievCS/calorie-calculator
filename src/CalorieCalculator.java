@@ -12,55 +12,59 @@ public class CalorieCalculator {
         Scanner scan = new Scanner(System.in);
 
         System.out.print("Enter your gender (M/F): ");
-        user.gender = scan.next();
+        user.gender = scan.nextLine();
 
         while (!user.gender.equals("M") && !user.gender.equals("F")) {
             System.out.print("Please enter a valid choice (M/F): ");
-            user.gender = scan.next();
+            user.gender = scan.nextLine();
         }
 
-        System.out.print("Enter your age: ");
+        System.out.print("\nEnter your age: ");
         // Ensure user enters an integer
         while(!scan.hasNextInt()) {
             System.out.print("Please enter a number: ");
-            scan.next();
+            scan.nextLine();
         }
         user.age = scan.nextInt();
 
-        System.out.print("Enter your height (in cm): ");
+        System.out.print("\nEnter your height (in cm): ");
+        scan.nextLine();
         while(!scan.hasNextInt()) {
             System.out.print("Please enter a number: ");
-            scan.next();
+            scan.nextLine();
         }
         user.height = scan.nextInt();
 
-        System.out.print("Enter your weight (in kg): ");
+        System.out.print("\nEnter your weight (in kg): ");
+        scan.nextLine();
         while(!scan.hasNextDouble()) {
             System.out.print("Please enter a number: ");
-            scan.next();
+            scan.nextLine();
         }
         user.weight = scan.nextDouble();
 
-        System.out.print("Choose your goal: \n * Cut\n * Maintain\n * Bulk\n");
-        user.goal = scan.next();
+        System.out.print("\nChoose your goal: \n * Cut\n * Maintain\n * Bulk\n");
+        // reset System.in
+        scan.nextLine();
+        user.goal = scan.nextLine();
         while (!user.goal.equals("Cut") && !user.goal.equals("Maintain")
                 && !user.goal.equals("Bulk")) {
             System.out.print("Please enter a valid choice: ");
-            user.goal = scan.next();
+            user.goal = scan.nextLine();
         }
 
-        System.out.print("Choose your activity level: \n * Sedentary (no activity)" +
+        System.out.print("\nChoose your activity level: \n * Sedentary (no activity)" +
                 "\n * Low (1-3 days per week)" +
                 "\n * Moderate (3-5 days per week)" +
                 "\n * High (6-7 days per week)" +
-                "\n * Very High (athlete or physical job)\n");
-        user.activityLevel = scan.next();
+                "\n * Very High (athlete or physical job\n");
+        user.activityLevel = scan.nextLine();
         while (!user.activityLevel.equals("Low") && !user.activityLevel.equals("Moderate")
                 && !user.activityLevel.equals("High") &&
                 !user.activityLevel.equals("Sedentary") &&
                 !user.activityLevel.equals("Very High")) {
             System.out.print("Please enter a valid choice: ");
-            user.activityLevel = scan.next();
+            user.activityLevel = scan.nextLine();
         }
 
     }
@@ -73,7 +77,7 @@ public class CalorieCalculator {
         currentUser.calculateActivity();
         currentUser.calculateIntake();
 
-        System.out.println("Calories: " + currentUser.calorieIntake + " kcal");
+        System.out.println("\nCalories: " + currentUser.calorieIntake + " kcal");
         System.out.println("Protein: " + currentUser.proteinIntake + " grams of protein");
 
     }
