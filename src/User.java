@@ -17,7 +17,7 @@ public class User {
      * Uses Muffin-St Jeor formula to calculate user basal metabolic rate (BMR)
      */
     public void calculateBMR() {
-        if (gender.equals("M")) {
+        if (gender.equals("m")) {
             BMR = 10 * weight + 6.25 * height - 5 * age + 5;
         } else {
             BMR = 10 * weight + 6.25 * height - 5 * age - 161;
@@ -30,9 +30,9 @@ public class User {
     public void calculateIntake() {
         proteinIntake = (int) (0.85 * KG_TO_LBS * weight);
 
-        if (goal.equals("Cut")) {
+        if (goal.equals("cut")) {
             calorieIntake = (int) (0.8 * calorieIntake);
-        } else if (goal.equals("Maintain")) {
+        } else if (goal.equals("maintain")) {
             calorieIntake = (int) calorieIntake;
         } else {
             calorieIntake = (int) (1.1 * calorieIntake);
@@ -47,16 +47,16 @@ public class User {
      * Adjust calorie intake according to activity level
      */
     public void calculateActivity() {
-        if (activityLevel.equals("Sedentary")) {
+        if (activityLevel.equals("sedentary")) {
             calorieIntake = (int) (BMR * 1.2);
         }
-        else if (activityLevel.equals("Low")) {
+        else if (activityLevel.equals("low")) {
             calorieIntake = (int) (BMR * 1.375);
-        } else if (activityLevel.equals("Moderate")) {
+        } else if (activityLevel.equals("moderate")) {
             calorieIntake = (int) (BMR * 1.55);
-        } else if (activityLevel.equals("High")) {
+        } else if (activityLevel.equals("high")) {
             calorieIntake = (int) (BMR * 1.725);
-        } else if (activityLevel.equals("Very High")) {
+        } else if (activityLevel.equals("very high")) {
             calorieIntake = (int) (BMR * 1.9);
         }
     }

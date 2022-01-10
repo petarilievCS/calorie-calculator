@@ -16,19 +16,19 @@ public class CalorieCalculator {
         Scanner scan = new Scanner(System.in);
 
         System.out.print("Enter your measurement system (Metric/Imperial): ");
-        user.unit = scan.nextLine().trim();
+        user.unit = scan.nextLine().trim().toLowerCase();
 
-        while (!user.unit.equals("Metric") && !user.unit.equals("Imperial")) {
+        while (!user.unit.equals("metric") && !user.unit.equals("imperial")) {
             System.out.print("Please enter a valid choice: ");
-            user.unit = scan.nextLine().trim();
+            user.unit = scan.nextLine().trim().toLowerCase();
         }
 
         System.out.print("\nEnter your gender (M/F): ");
-        user.gender = scan.nextLine().trim();
+        user.gender = scan.nextLine().trim().toLowerCase();
 
-        while (!user.gender.equals("M") && !user.gender.equals("F")) {
+        while (!user.gender.equals("m") && !user.gender.equals("f")) {
             System.out.print("Please enter a valid choice (M/F): ");
-            user.gender = scan.nextLine().trim();
+            user.gender = scan.nextLine().trim().toLowerCase();
         }
 
         System.out.print("\nEnter your age: ");
@@ -39,7 +39,7 @@ public class CalorieCalculator {
         }
         user.age = scan.nextInt();
 
-        if (user.unit.equals("Metric")) {
+        if (user.unit.equals("metric")) {
 
             System.out.print("\nEnter your height (in cm): ");
             scan.nextLine();
@@ -89,11 +89,11 @@ public class CalorieCalculator {
         System.out.print("\nChoose your goal: \n * Cut\n * Maintain\n * Bulk\n");
         // reset System.in
         scan.nextLine();
-        user.goal = scan.nextLine().trim();
-        while (!user.goal.equals("Cut") && !user.goal.equals("Maintain")
-                && !user.goal.equals("Bulk")) {
+        user.goal = scan.nextLine().trim().toLowerCase();
+        while (!user.goal.equals("cut") && !user.goal.equals("maintain")
+                && !user.goal.equals("bulk")) {
             System.out.print("Please enter a valid choice: ");
-            user.goal = scan.nextLine().trim();
+            user.goal = scan.nextLine().trim().toLowerCase();
         }
 
         System.out.print("\nChoose your activity level: \n * Sedentary (no activity)" +
@@ -101,13 +101,13 @@ public class CalorieCalculator {
                 "\n * Moderate (3-5 days per week)" +
                 "\n * High (6-7 days per week)" +
                 "\n * Very High (athlete or physical job\n");
-        user.activityLevel = scan.nextLine().trim();
-        while (!user.activityLevel.equals("Low") && !user.activityLevel.equals("Moderate")
-                && !user.activityLevel.equals("High") &&
-                !user.activityLevel.equals("Sedentary") &&
-                !user.activityLevel.equals("Very High")) {
+        user.activityLevel = scan.nextLine().trim().toLowerCase();
+        while (!user.activityLevel.equals("low") && !user.activityLevel.equals("moderate")
+                && !user.activityLevel.equals("high") &&
+                !user.activityLevel.equals("sedentary") &&
+                !user.activityLevel.equals("very high")) {
             System.out.print("Please enter a valid choice: ");
-            user.activityLevel = scan.nextLine().trim();
+            user.activityLevel = scan.nextLine().trim().toLowerCase();
         }
 
     }
