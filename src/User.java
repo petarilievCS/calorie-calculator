@@ -2,16 +2,16 @@ public class User {
 
     public static final double KG_TO_LBS = 2.2;
 
-    protected String gender;
-    protected int age;
-    protected int height;
-    protected double weight;
-    protected String goal;
-    protected double BMR;
-    protected int proteinIntake;
-    protected int calorieIntake;
-    protected String activityLevel;
-    protected String unit;
+    public String gender;
+    public int age;
+    public int height;
+    public double weight;
+    public String goal;
+    public double BMR;
+    public int proteinIntake;
+    public int calorieIntake;
+    public String activityLevel;
+    public String unit;
 
     /**
      * Uses Muffin-St Jeor formula to calculate user basal metabolic rate (BMR)
