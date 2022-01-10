@@ -5,6 +5,7 @@ public class CalorieCalculator {
     /**
      * Take in information from user (gender, weight, height, age and goal)
      * Set user variables according to input
+     *
      * @param user
      */
     public static void takeInfo(User user) {
@@ -32,7 +33,7 @@ public class CalorieCalculator {
 
         System.out.print("\nEnter your age: ");
         // Ensure user enters an integer
-        while(!scan.hasNextInt()) {
+        while (!scan.hasNextInt()) {
             System.out.print("Please enter a number: ");
             scan.nextLine();
         }
@@ -60,6 +61,7 @@ public class CalorieCalculator {
 
             System.out.println("\nEnter your height ");
             System.out.print("Feet: ");
+            scan.nextLine();
             while (!scan.hasNextInt()) {
                 System.out.print("Please enter a number: ");
                 scan.nextLine();
@@ -67,7 +69,8 @@ public class CalorieCalculator {
             user.height = (int) (scan.nextInt() * 30.48);
 
             System.out.print("Inches: ");
-            while(!scan.hasNextInt()) {
+            scan.nextLine();
+            while (!scan.hasNextInt()) {
                 System.out.print("Please enter a number: ");
                 scan.nextLine();
             }
