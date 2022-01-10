@@ -1,8 +1,10 @@
+import java.util.Locale;
 import java.util.Scanner;
 
 public class CalorieCalculator {
 
     // TODO: Add functionality to restart the calculator after calculating
+    // TODO: Fix newline issue
 
     /**
      * Take in information from user (gender, weight, height, age and goal)
@@ -114,13 +116,34 @@ public class CalorieCalculator {
     public static void main(String[] args) {
 
         User currentUser = new User();
-        takeInfo(currentUser);
-        currentUser.calculateBMR();
-        currentUser.calculateActivity();
-        currentUser.calculateIntake();
+        boolean run = true;
+        String answer;
+        Scanner scan = new Scanner(System.in);
 
-        System.out.println("\nCalories: " + currentUser.calorieIntake + " kcal");
-        System.out.println("Protein: " + currentUser.proteinIntake + " grams");
+        while (run) {
+            takeInfo(currentUser);
+            currentUser.calculateBMR();
+            currentUser.calculateActivity();
+            currentUser.calculateIntake();
+
+            System.out.println("\nCalories: " + currentUser.calorieIntake + " kcal");
+            System.out.println("Protein: " + currentUser.proteinIntake + " grams");
+
+            System.out.print("\nDo you want to calculate again? (Y/N): ");
+            answer = scan.nextLine().trim().toLowerCase();
+
+            while (!answer.equals("y") && !answer.equals("yes") && !answer.equals("n")
+                    && !answer.equals("no")) {
+                System.out.println("Please enter a valid choice (Y/N): ");
+                answer = scan.nextLine().trim().toLowerCase();
+            }
+
+            if (answer.equals("no") || answer.equals("n")) {
+                run = false;
+            }
+            System.out.println();
+
+        }
 
     }
 }
