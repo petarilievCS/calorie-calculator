@@ -2,6 +2,8 @@ import java.util.Scanner;
 
 public class CalorieCalculator {
 
+    // TODO: Add functionality to restart the calculator after calculating
+
     /**
      * Take in information from user (gender, weight, height, age and goal)
      * Set user variables according to input
@@ -9,9 +11,6 @@ public class CalorieCalculator {
      * @param user
      */
     public static void takeInfo(User user) {
-
-        // TODO: Add imperial units feature
-        // TODO: Fix capitalization
 
         Scanner scan = new Scanner(System.in);
 
@@ -121,7 +120,7 @@ public class CalorieCalculator {
         currentUser.calculateIntake();
 
         System.out.println("\nCalories: " + currentUser.calorieIntake + " kcal");
-        System.out.println("Protein: " + currentUser.proteinIntake + " grams of protein");
+        System.out.println("Protein: " + currentUser.proteinIntake + " grams");
 
     }
 }
