@@ -3,7 +3,6 @@ import java.util.Scanner;
 
 public class CalorieCalculator {
 
-    // TODO: Add functionality to restart the calculator after calculating
     // TODO: Fix newline issue
 
     /**
