@@ -54,7 +54,7 @@ public class CalorieCalculator {
         System.out.print("\nEnter your age: ");
         String ageStr = scan.nextLine();
         // Ensure user enters an integer
-        while (ageStr.length() == 0 || !isInteger(ageStr)) {
+        while (ageStr.trim().length() == 0 || !isInteger(ageStr)) {
             System.out.print("Please enter a number: ");
             ageStr = scan.nextLine();
         }
@@ -64,7 +64,7 @@ public class CalorieCalculator {
 
             System.out.print("\nEnter your height (in cm): ");
             String cmStr = scan.nextLine();
-            while (cmStr.length() == 0 || !isInteger(cmStr)) {
+            while (cmStr.trim().length() == 0 || !isInteger(cmStr)) {
                 System.out.print("Please enter a number: ");
                 cmStr = scan.nextLine();
             }
@@ -82,20 +82,20 @@ public class CalorieCalculator {
 
             System.out.println("\nEnter your height ");
             System.out.print("Feet: ");
-            scan.nextLine();
-            while (!scan.hasNextInt()) {
+            String ftStr = scan.nextLine();
+            while (ftStr.trim().length() == 0 || !isInteger(ftStr)) {
                 System.out.print("Please enter a number: ");
-                scan.nextLine();
+                ftStr = scan.nextLine();
             }
-            user.height = (int) (scan.nextInt() * 30.48);
+            user.height = (int) (Integer.parseInt(ftStr.trim()) * 30.48);
 
             System.out.print("Inches: ");
-            scan.nextLine();
-            while (!scan.hasNextInt()) {
+            String inStr = scan.nextLine();
+            while (inStr.trim().length() == 0 || !isInteger(inStr)) {
                 System.out.print("Please enter a number: ");
-                scan.nextLine();
+                inStr = scan.nextLine();
             }
-            user.height += (int) (scan.nextInt() * 2.54);
+            user.height += (int) (Integer.parseInt(inStr.trim()) * 2.54);
 
             System.out.print("\nPlease enter your weight (in lbs): ");
             scan.nextLine();
