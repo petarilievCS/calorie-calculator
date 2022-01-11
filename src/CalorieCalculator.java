@@ -26,6 +26,30 @@ public class CalorieCalculator {
     }
 
     /**
+     * Check whether a string can be converted into a double
+     * @param s input string
+     * @return ture if s can be converted to double, false otherwise
+     */
+    public static boolean isDouble(String s) {
+        s = s.trim();
+        int dotCount = 0;
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == '.') {
+                if (dotCount == 0) {
+                    dotCount++;
+                } else {
+                    return false;
+                }
+            } else {
+                if (!(INTEGERS_LIST.contains(s.charAt(i)))) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    /**
      * Take in information from user (gender, weight, height, age and goal)
      * Set user variables according to input
      *
