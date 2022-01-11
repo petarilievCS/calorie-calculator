@@ -1,8 +1,29 @@
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class CalorieCalculator {
 
+    private static final char[] INTEGERS = {'1', '2', '3', '4', '5', '6', '7', '8', '9', '0'};
+    private static final ArrayList<Character> INTEGERS_LIST = new ArrayList(Arrays.asList(INTEGERS));
+
     // TODO: Fix newline issue
+
+    /**
+     * Check whether a string can be converted into an integer.
+     * @param s input string
+     * @return true if s can be converted to integer, false otherwise
+     */
+    public static boolean isInteger(String s) {
+        // remove whitespace
+        s = s.trim();
+        for (int i = 0; i < s.length(); i++) {
+            if (!(INTEGERS_LIST.contains(s.charAt(i)))) {
+                return false;
+            }
+        }
+        return true;
+    }
 
     /**
      * Take in information from user (gender, weight, height, age and goal)
@@ -142,6 +163,7 @@ public class CalorieCalculator {
             System.out.println();
 
         }
+
 
     }
 }
