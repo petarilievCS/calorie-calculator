@@ -4,8 +4,8 @@ import java.util.Arrays;
 
 public class CalorieCalculator {
 
-    private static final char[] INTEGERS = {'1', '2', '3', '4', '5', '6', '7', '8', '9', '0'};
-    private static final ArrayList<Character> INTEGERS_LIST = new ArrayList(Arrays.asList(INTEGERS));
+    private static final ArrayList<Character> INTEGERS_LIST = new ArrayList(Arrays.asList('1', '2',
+            '3', '4', '5', '6', '7', '8', '9', '0'));
 
     // TODO: Fix newline issue
 
@@ -52,17 +52,17 @@ public class CalorieCalculator {
         }
 
         System.out.print("\nEnter your age: ");
+        String ageStr = scan.nextLine();
         // Ensure user enters an integer
-        while (!scan.hasNextInt()) {
+        while (ageStr.length() == 0 || !isInteger(ageStr)) {
             System.out.print("Please enter a number: ");
-            scan.nextLine();
+            ageStr = scan.nextLine();
         }
-        user.age = scan.nextInt();
+        user.age = Integer.parseInt(ageStr.trim());
 
         if (user.unit.equals("metric")) {
 
             System.out.print("\nEnter your height (in cm): ");
-            scan.nextLine();
             while (!scan.hasNextInt()) {
                 System.out.print("Please enter a number: ");
                 scan.nextLine();
