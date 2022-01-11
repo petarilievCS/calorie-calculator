@@ -63,11 +63,12 @@ public class CalorieCalculator {
         if (user.unit.equals("metric")) {
 
             System.out.print("\nEnter your height (in cm): ");
-            while (!scan.hasNextInt()) {
+            String cmStr = scan.nextLine();
+            while (cmStr.length() == 0 || !isInteger(cmStr)) {
                 System.out.print("Please enter a number: ");
-                scan.nextLine();
+                cmStr = scan.nextLine();
             }
-            user.height = scan.nextInt();
+            user.height = Integer.parseInt(cmStr.trim());
 
             System.out.print("\nEnter your weight (in kg): ");
             scan.nextLine();
