@@ -32,9 +32,7 @@ public class User {
 
         if (goal.equals("cut")) {
             calorieIntake = (int) (0.8 * calorieIntake);
-        } else if (goal.equals("maintain")) {
-            calorieIntake = (int) calorieIntake;
-        } else {
+        } else if (goal.equals("bulk")) {
             calorieIntake = (int) (1.1 * calorieIntake);
         }
 
