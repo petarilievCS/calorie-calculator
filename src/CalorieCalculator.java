@@ -95,12 +95,12 @@ public class CalorieCalculator {
             user.height = Integer.parseInt(cmStr.trim());
 
             System.out.print("\nEnter your weight (in kg): ");
-            scan.nextLine();
-            while (!scan.hasNextDouble()) {
+            String kgStr = scan.nextLine();
+            while (kgStr.trim().length() == 0 || kgStr.trim().equals(".") || !isDouble(kgStr)) {
                 System.out.print("Please enter a number: ");
-                scan.nextLine();
+                kgStr = scan.nextLine();
             }
-            user.weight = scan.nextDouble();
+            user.weight = Double.parseDouble(kgStr);
 
         } else {
 
@@ -133,7 +133,6 @@ public class CalorieCalculator {
 
         System.out.print("\nChoose your goal: \n * Cut\n * Maintain\n * Bulk\n");
         // reset System.in
-        scan.nextLine();
         user.goal = scan.nextLine().trim().toLowerCase();
         while (!user.goal.equals("cut") && !user.goal.equals("maintain")
                 && !user.goal.equals("bulk")) {
@@ -188,7 +187,6 @@ public class CalorieCalculator {
             System.out.println();
 
         }
-
 
     }
 }
