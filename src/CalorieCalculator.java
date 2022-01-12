@@ -151,7 +151,6 @@ public class CalorieCalculator {
             System.out.print("Please enter a valid choice: ");
             user.activityLevel = scan.nextLine().trim().toLowerCase();
         }
-
     }
 
     public static void main(String[] args) {
@@ -183,8 +182,6 @@ public class CalorieCalculator {
                 run = false;
             }
             System.out.println();
-
         }
-
     }
 }

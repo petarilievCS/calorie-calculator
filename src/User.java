@@ -28,7 +28,7 @@ public class User {
      * Calculates user protein and calorie intake based on goal
      */
     public void calculateIntake() {
-        proteinIntake = (int) (0.85 * KG_TO_LBS * weight);
+        proteinIntake = (int) (KG_TO_LBS * weight);
 
         if (goal.equals("cut")) {
             calorieIntake = (int) (0.8 * calorieIntake);
@@ -58,5 +58,4 @@ public class User {
             calorieIntake = (int) (BMR * 1.9);
         }
     }
-
 }
