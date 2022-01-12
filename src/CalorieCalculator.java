@@ -7,8 +7,6 @@ public class CalorieCalculator {
     private static final ArrayList<Character> INTEGERS_LIST = new ArrayList(Arrays.asList('1', '2',
             '3', '4', '5', '6', '7', '8', '9', '0'));
 
-    // TODO: Fix newline issue
-
     /**
      * Check whether a string can be converted into an integer.
      * @param s input string
