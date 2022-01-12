@@ -122,12 +122,12 @@ public class CalorieCalculator {
             user.height += (int) (Integer.parseInt(inStr.trim()) * 2.54);
 
             System.out.print("\nPlease enter your weight (in lbs): ");
-            scan.nextLine();
-            while (!scan.hasNextDouble()) {
+            String lbStr = scan.nextLine();
+            while (lbStr.trim().length() == 0 || lbStr.trim().equals(".") || !isDouble(lbStr)) {
                 System.out.print("Please enter a number: ");
-                scan.nextLine();
+                lbStr = scan.nextLine();
             }
-            user.weight = scan.nextDouble() / User.KG_TO_LBS;
+            user.weight = Double.parseDouble(lbStr) / User.KG_TO_LBS;
 
         }
 
